@@ -12,17 +12,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/medsitpharmacyapp-repo/',
     plugins: [react()],
-    define: {
-      'process.env.API_KEY': JSON.stringify(env.API_KEY),
-      // Provide a fallback for the rest of process.env if needed
-      'process.env': {
-        NODE_ENV: JSON.stringify(mode),
-        ...Object.keys(env).reduce((prev, key) => {
-          prev[key] = env[key];
-          return prev;
-        }, {} as any),
-      }
-    },
+    define: {},
     server: {
       port: 3000,
       open: true

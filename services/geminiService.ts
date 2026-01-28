@@ -5,7 +5,11 @@ import { GoogleGenAI, Type } from "@google/genai";
  * Analyzes a prescription image and extracts a clean list of medicine names.
  */
 export const analyzePrescriptionImage = async (base64Image: string, mimeType: string): Promise<string[]> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = import.meta.env.VITE_API_KEY;
+  if (!apiKey) {
+    throw new Error('API key not configured. Please set VITE_API_KEY environment variable.');
+  }
+  const ai = new GoogleGenAI({ apiKey });
   
   const response = await ai.models.generateContent({
     model: "gemini-3-flash-preview",
@@ -52,7 +56,11 @@ export const getAssistantResponse = async (
   history: { role: 'user' | 'model', parts: { text: string }[] }[],
   userContext: { name: string, reminders: any[], membershipType: string, currentTime: string }
 ): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = import.meta.env.VITE_API_KEY;
+  if (!apiKey) {
+    throw new Error('API key not configured. Please set VITE_API_KEY environment variable.');
+  }
+  const ai = new GoogleGenAI({ apiKey });
   
   const systemInstruction = `You are 'Medsit AI', a deeply empathetic, warm, and highly knowledgeable personal health companion. 
   Your persona is that of a caring friend who is also a medical expert.
