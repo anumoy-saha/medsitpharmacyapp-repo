@@ -1,0 +1,9 @@
+{
+  "name": "Medsit - Super Fast Health & Medicine Delivery",
+  "description": "A high-performance healthcare platform for lightning-fast medicine delivery, doctor consultations, and emergency ambulance services with AI-powered prescription scanning.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera",
+    "microphone"
+  ]
+}
