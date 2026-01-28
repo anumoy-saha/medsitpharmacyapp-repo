@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   
   return {
+    base: '/medsitpharmacyapp-repo/',
     plugins: [react()],
     define: {
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
