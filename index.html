@@ -15,7 +15,17 @@
         width:         git add .github/workflows/deploy.yml
         git commit -m "ci: add GitHub Actions workflow to deploy to Pages"
         git push origin main8px;
-      }
+      }      git init
+      git branch -M main
+      git add .
+      git commit -m "chore: initial commit + add GH Pages workflow"
+      git remote add origin <REMOTE_URL>
+      git push -u origin main      git init
+      git branch -M main
+      git add .
+      git commit -m "chore: initial commit + add GH Pages workflow"
+      git remote add origin https://github.com/yourname/repo.git
+      git push -u origin main
       ::-webkit-scrollbar-track {
         background: #f1f1f1;
       }
